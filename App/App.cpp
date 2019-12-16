@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "sgx_urts.h"
 #include "Enclave_u.h"
 #include "sgx_uae_quote_ex.h"
@@ -189,7 +190,7 @@ int main()
     ret = sgx_get_quote_size_ex(&key_id, &quote_size);
     switch(ret){
         case SGX_SUCCESS:
-            std::cout << "Retrieved quote size\n"; break;
+            std::cout << "Retrieved quote size: " << quote_size << "\n"; break;
         case SGX_ERROR_INVALID_PARAMETER:
             PRINTERR << "Invalid parameter - Check inputs\n"; break;
         case SGX_ERROR_ATT_KEY_UNINITIALIZED:
@@ -234,6 +235,13 @@ int main()
             return 1;
     }
 
+    using namespace std;
+    ofstream attestation_file ("attestation.bytes", ios::out | ios::binary);
+    if (attestation_file.is_open()) {
+        for (int i=0; i < quote_size; i++){
+            attestation_file << quote[i];
+        }
+    }
     delete pubkey_id;
     delete quote;
     std::cout << "\nCOMPLETED\n\n";
