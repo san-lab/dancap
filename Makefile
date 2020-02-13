@@ -102,6 +102,11 @@ endif
 App_Cpp_Objects := $(App_Cpp_Files:.cpp=.o)
 
 App_Name := hello
+
+######## Verifier Settings ########
+DCAP_lib_path := /usr/lib/x86_64-linux-gnu
+DCAP_lib_name := libdcap_quoteverify.so
+Verifier_Link_Flags := -L$(DCAP_lib_path) -l$(DCAP_lib_name)
 Verifier_Name := verifier 
 
 ######## Enclave Settings ########
@@ -212,7 +217,7 @@ $(App_Name): App/Enclave_u.o $(App_Cpp_Objects)
 
 ######## Verifier Objects #######
 $(Verifier_Name): RelyingParty/Verifier.cpp
-	@$(CXX) $(App_Cpp_Flags) $< -o $@
+	@$(CXX) $(App_Cpp_Flags) $(Verifier_Link_Flags) $< -o $@
 	@echo "CXX  <=  $<"
 
 ######## Enclave Objects ########
