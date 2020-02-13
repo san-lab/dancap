@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
-// #include "sgx_dcap_quoteverify.h"
+#include "sgx_dcap_quoteverify.h"
 
 int main() {
     using namespace std;
@@ -29,11 +29,11 @@ int main() {
     quote_file.close();
 
 
-    // TODO verify quote
+    // verify quote
 
     time_t now = time(NULL);
     uint32_t expiration_status = 0;
-    /*   
+       
     sgx_qv_result_t verification_result = SGX_QL_QV_RESULT_UNSPECIFIED;
     qutoe3_error_t result = SGX_QL_ERROR_UNEXPECTED;
 
@@ -59,7 +59,7 @@ int main() {
             cout << "\n Verification result code: " << hex << verification_result << endl;
             cout << dec;
     }
-    */
+ 
 
     // TODO: Verify report data
 
