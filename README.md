@@ -190,7 +190,10 @@ However if you build in HW mode the binary will work on Ubuntu natively.)
     5.5 Add the library folder to the LD_LIBRARY_PATH
 
     `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/linux-sgx/psw/uae_service/linux/`
-   
+
+6. Install DCAP libraries
+
+   `apt-get install -y -q libsgx-dcap-ql libsgx-dcap-ql-dev`
 
 # Misc
 The project has a helper function to print SGX error codes and messages.
