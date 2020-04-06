@@ -188,9 +188,8 @@ However if you build in HW mode the binary will work on Ubuntu natively.)
     > Even if `make psw` have ended with errors, the only thing that matters is that the library exists
     
     5.5 Add the library folder to the LD_LIBRARY_PATH
-    ```
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/linux-sgx/psw/uae_service/linux/
-    ``
+
+    `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/linux-sgx/psw/uae_service/linux/`
    
 
 # Misc
