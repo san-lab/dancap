@@ -176,11 +176,13 @@ However if you build in HW mode the binary will work on Ubuntu natively.)
 5. Install PSW
 
     5.1 Clone https://github.com/intel/linux-sgx.git in '/opt/intel'
+    
     5.2 Install dependencies
     ```
     sudo apt-get install libssl-dev libcurl4-openssl-dev protobuf-compiler libprotobuf-dev debhelper cmake reprepro
     ```
     5.3 Build project `make psw`
+    
     5.4 Check that the library /opt/intel/linux-sgx/psw/uae_service/linux/libsgx_uae_service.so exists
     
     > Even if `make psw` have ended with errors, the only thing that matters is that the library exists
