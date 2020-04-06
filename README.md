@@ -78,27 +78,27 @@ However if you build in HW mode the binary will work on Ubuntu natively.)
 
 2. Verify the attestation
  
-        0. Build docker base
+     0. Build docker base
         
-            `./build-docker`
+     `./build-docker`
             
-        1. Build verifier container
+     1. Build verifier container
 
-            `./build-docker-verifier`
+     `./build-docker-verifier`
 
-        2. Run verifier container
+     2. Run verifier container
 
-            `./run-docker-verifier`
+     `./run-docker-verifier`
 
-        3. If necessary copy attestation.bytes to the verifier\'s host
+     3. If necessary copy attestation.bytes to the verifier\'s host
 
-            I.e. if you are running the verifier on a different host than the attestor. The verifier
-            will look for the attestation in the same directory as the verifier binary. The project
-            root (e.g.  /home/you/dancap) is mapped into the verifier container at /project/dancap.
+     I.e. if you are running the verifier on a different host than the attestor. The verifier
+     will look for the attestation in the same directory as the verifier binary. The project
+     root (e.g.  /home/you/dancap) is mapped into the verifier container at /project/dancap.
 
-        4. Run the verifier from the container\'s shell
+     4. Run the verifier from the container\'s shell
         
-            `./verifier`
+     `./verifier`
 
     Expect output to look like this:
 
