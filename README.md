@@ -1,3 +1,7 @@
+# Descrition
+
+Just some extra steps in the readme to make dancap work in our particular cloud environment.
+
 # Overview
 This is a proof of concept lab to explore attestation options for
 Hyperledger Avalon.
